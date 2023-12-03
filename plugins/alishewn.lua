@@ -4,16 +4,6 @@ return {
     {"simrat39/symbols-outline.nvim", event = "VeryLazy", opts = {}},
     {"rmagatti/goto-preview", event = "VeryLazy", opts = {}}, --
     {
-        "roobert/search-replace.nvim",
-        config = function()
-            require("search-replace").setup({
-                -- optionally override defaults
-                default_replace_single_buffer_options = "gcI",
-                default_replace_multi_buffer_options = "egcI"
-            })
-        end
-    }, --
-    {
         "kylechui/nvim-surround",
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
         event = "VeryLazy",

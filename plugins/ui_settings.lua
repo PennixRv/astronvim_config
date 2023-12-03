@@ -10,7 +10,8 @@ return {
             tabline = nil,
             winbar = nil,
             statusline = nil
-        }, -- {"Bekaboo/dropbar.nvim", event = "VeryLazy", opts = {}}, -- 
+        }
+        -- {"Bekaboo/dropbar.nvim", event = "VeryLazy", opts = {}}, -- 
         -- {
         --     "utilyre/barbecue.nvim",
         --     name = "barbecue",
@@ -21,45 +22,46 @@ return {
         --     opts = {
         --         -- configurations go here
         --     }
-        -- }, 
-        {
-            'romgrk/barbar.nvim',
-            event = "VeryLazy",
-            dependencies = {
-                'lewis6991/gitsigns.nvim', 'nvim-tree/nvim-web-devicons'
-            },
-            opts = {
-                animation = true,
-                -- auto_hide = true,
-                tabpages = true,
-                focus_on_close = 'left',
-                insert_at_start = true,
-                sidebar_filetypes = {
-                    ['neo-tree'] = {
-                        event = 'BufWipeout',
-                        text = '        File Explorer'
-                    }
-                },
-                icons = {
-                    diagnostics = {
-                        [vim.diagnostic.severity.ERROR] = {
-                            enabled = true,
-                            icon = 'ﬀ'
-                        },
-                        [vim.diagnostic.severity.WARN] = {enabled = false},
-                        [vim.diagnostic.severity.INFO] = {enabled = false},
-                        [vim.diagnostic.severity.HINT] = {enabled = true}
-                    }
-                    -- gitsigns = {
-                    --     added = {enabled = true, icon = '+'},
-                    --     changed = {enabled = true, icon = '~'},
-                    --     deleted = {enabled = true, icon = '-'}
-                    -- }
-                },
-                maximum_length = 25,
-                no_name_title = nil
-            }
-        }
+        -- },         -- 
+        -- ------------------------------------------------------
+        -- 选项卡设置插件 https://github.com/romgrk/barbar.nvim
+        -- {
+        --     'romgrk/barbar.nvim',
+        --     event = "VeryLazy",
+        --     dependencies = {
+        --         'lewis6991/gitsigns.nvim', 'nvim-tree/nvim-web-devicons'
+        --     },
+        --     opts = {
+        --         animation = true,
+        --         tabpages = true,
+        --         focus_on_close = 'left',
+        --         insert_at_start = true,
+        --         sidebar_filetypes = {
+        --             ['neo-tree'] = {
+        --                 event = 'BufWipeout',
+        --                 text = '        File Explorer'
+        --             }
+        --         },
+        --         icons = {
+        --             diagnostics = {
+        --                 [vim.diagnostic.severity.ERROR] = {
+        --                     enabled = true,
+        --                     icon = 'ﬀ'
+        --                 },
+        --                 [vim.diagnostic.severity.WARN] = {enabled = false},
+        --                 [vim.diagnostic.severity.INFO] = {enabled = false},
+        --                 [vim.diagnostic.severity.HINT] = {enabled = true}
+        --             }
+        --             -- gitsigns = {
+        --             --     added = {enabled = true, icon = '+'},
+        --             --     changed = {enabled = true, icon = '~'},
+        --             --     deleted = {enabled = true, icon = '-'}
+        --             -- }
+        --         },
+        --         maximum_length = 25,
+        --         no_name_title = nil
+        --     }
+        -- }
     }, -- tab bar settings
     ---------------------------------------------------------------------------------------
     ---------------------------------------------------------------------------------------
@@ -121,22 +123,8 @@ return {
             config = function(_, opts)
                 require("illuminate").configure(opts)
             end
-        },
-        -----------------------------------------------------------------------------------
-        {
-            "azabiong/vim-highlighter",
-            lazy = false, -- Not Lazy by default
-            keys = {
-                {"f<Enter>", desc = "Highlight"},
-                {"f<BS>", desc = "Remove Highlight"},
-                {"f<C-L>", desc = "Clear Highlight"},
-                {"f<Tab>", desc = "Find Highlight (similar to Telescope grep)"}
-                -- {"nn", "<cmd>Hi><CR>", desc = "Next Recently Set Highlight"},
-                -- {"ng", "<cmd>Hi<<CR>", desc = "Previous Recently Set Highlight"},
-                -- {"n[", "<cmd>Hi{<CR>", desc = "Next Nearest Highlight"},
-                -- {"n]", "<cmd>Hi}<CR>", desc = "Previous Nearest Highlight"}
-            }
         }
+        -----------------------------------------------------------------------------------
     }, -- things about highlight
     {
         "jinzhongjia/LspUI.nvim",
@@ -145,24 +133,6 @@ return {
     },
     ---------------------------------------------------------------------------------------
     ---------------------------------------------------------------------------------------
-    { -- settings about astronvim theme
-        "AstroNvim/astrotheme",
-        opts = {
-            style = {
-                italic_comments = false,
-                inactive = false,
-                border = true,
-                neotree = false,
-                title_invert = false,
-                terminal_color = false,
-                termguicolors = false
-                -- float = false,
-                -- popup = false
-            },
-            palettes = {astrodark = {ui = {base = "#15171a"}}}
-        }
-
-    }, -- settings about astronvim theme
     {
         "nvim-neo-tree/neo-tree.nvim",
         event = "VeryLazy",
